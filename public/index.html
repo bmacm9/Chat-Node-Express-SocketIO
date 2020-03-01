@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Chat con Node + socket</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="row a">
+        <div class="col-md-2 d-none d-md-block fixed-left bg-dark">
+            <div class="row">
+                <div class="col-12">
+                    <div id="users" class="row"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 ml-2 ml-md-0 col-md-10 margenabajo">
+            <div class="row">
+                <div class="col-12">
+                    <ul id="messages"></ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p id="typing"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row fixed-bottom bg-dark justify-content-end">
+        <div class="col-12 col-md-10">
+            <form class="form-inline pt-3 pb-3 row">
+                <div class="form-group col-1 ml-1 mr-3 ml-md-0 mr-md-0">
+                    <input type="file" style="display: none;" class="form-control-file btn btn-primary"
+                        id="file_input" />
+                    <input type="button" class="ml-2 btn btn-warning" value="+"
+                        onclick="document.getElementById('file_input').click();" />
+                </div>
+                <div class="form-group ml-2 col-8">
+                    <input id="m" class="bg-white form-control-plaintext input" autocomplete="off" />
+                </div>
+                <div class="form-group col-2">
+                    <button id="send" class=" btn btn-primary mr-3">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="/siofu/client.js"></script>
+    <script src="/js/script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+</body>
+
+</html>
